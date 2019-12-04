@@ -11,7 +11,7 @@
 }
 
 #bg {
-    background-image: url(../img/big.jpg);
+    background-image: url(./img/big.jpg);
     width: 110%;
     height: 45%;
 }
@@ -21,4 +21,8 @@
 
 #search {
     background-color: rgb(120, 208, 238);
+}
+
+.body {
+    background-image: url(./img/esports.jpg);
 }
