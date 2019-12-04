@@ -1,0 +1,14 @@
+.img {
+    float: right; 
+    width: 45%;
+    height: 20%;
+}
+
+.title {
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.img1 {
+    width: 20%;
+    height: 15%;
+}
