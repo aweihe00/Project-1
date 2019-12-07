@@ -15,16 +15,13 @@
     width: 110%;
     height: 45%;
 }
-.title {
-    color: white;
-}
 
 #search1 {
     background-color: rgb(120, 208, 238);
 }
 
 body {
-    background-image: url(./img/gamingbg1);
+    background-image: url(./img/gamingbg1.jpg);
 }
 
 .box {
