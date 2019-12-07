@@ -14,7 +14,7 @@ function createMap () {
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
   });
-
+  
   var markers = [];
 
   searchBox.addListener('places_changed', function() {
