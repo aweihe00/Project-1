@@ -15,7 +15,7 @@ axios({
 });
 
 
-
+https:api.pandascore.co/some-url?token=8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I
 
 
   // Event handler for user clicking the select-game button
