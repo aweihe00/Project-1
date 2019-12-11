@@ -4,9 +4,9 @@ var upcomingTournament = new pandaScore();
 request.open('GET', 'https://api.pandascore.co.?
 platform=3&personaId = 8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I&game=tunguska');
 
-request.setRequestHeader('TRN-Api-Key', '8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I');
+request.setRequestHeader('Api-Key', '8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I');
 
-request.onreadystatechange = function () {
+request.eSportsInfo = function () {
 
 if (this.readyState === 4) {
 
