@@ -9,7 +9,9 @@ Simple website to view upcoming events for eSports Tournaments. Created with HTM
 
     [Technologies](#technologies)
 
-    [Illustrtion](#illustration)
+
+    [Illustration](#illustration)
+
 
     [Setup](#setup)
 
@@ -73,4 +75,6 @@ Add additional notes about how to deploy this on a live system
 
 * **Linsay_McMahon** - *pandascore javascript* - [McMahon8900](https://github.com/McMahon8900)
 
-* **Opal** - *HTML and CSS Styling* - [](https://github.com//)
+
+* **Opal** - *HTML and CSS Styling* - [nuphawan](https://github.com/nuphawan)
+
