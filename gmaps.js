@@ -1,7 +1,7 @@
 //creating gmaps variable
 var map
 
-//populating map onto the page with styling
+//setting map attributes and starting point
 function createMap () {
   var options = {
     center: { lat: 40.700610, lng: -73.997242, },
@@ -128,7 +128,7 @@ function createMap () {
     ]
   };
 
-//calling the map constructor
+//populating the map onto the page
   map = new google.maps.Map(document.getElementById('map'), options);
 
 //initilazing search box
