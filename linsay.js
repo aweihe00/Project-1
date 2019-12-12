@@ -1,27 +1,55 @@
-var esportsLoader = document.getElementById("box");
-var upcomingTournament = new pandaScore();
+//var esportsLoader = document.getElementById("box");
+//var upcomingTournament = new pandaScore();
 
-request.open('GET', 'https://api.pandascore.co.?
-platform=3&personaId = 8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I&game=tunguska');
+//$.getJSON("https://api.pandascore.co/tournaments/upcoming/application.json", function(data){
+  //console.log(data);
+//});
 
-request.setRequestHeader('Api-Key', '8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I');
 
-request.eSportsInfo = function () {
 
-if (this.readyState === 4) {
 
-  console.log('Status:', this.status);
 
-  console.log('Headers:', this.getAllResponseHeaders());
+fetch("https://api.pandascore.co/tournaments/upcoming.json", {
+	"method": "GET",
+	"headers": {
+		"panadascore-host": "api.pandascore.co",
+		"pandascore-key": "8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+  console.log(err);
+  
+  response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
+});
 
-  console.log('Body:', this.responseText);
 
-}
-};
 
-request.send();
 
-$().append(content,function(box))
+
+//request.open('GET', 'https://api.pandascore.co.?
+//platform=3&personaId = 8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I&game=tunguska');
+
+//request.setRequestHeader('Api-Key', '8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I');
+
+//request.eSportsInfo = function () {
+
+//if (this.readyState === 4) {
+
+  //console.log('Status:', this.status);
+
+  //console.log('Headers:', this.getAllResponseHeaders());
+
+//console.log('Body:', this.responseText);
+
+//}
+//};
+
+//request.send();
+
+//$().append(content,function(box))
 
 //--------------------------------------------------------------------
 //WORKING ON TOP AREA FIRST THEN COMING DOWN TO CLEAN THIS UP
