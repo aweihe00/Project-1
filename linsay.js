@@ -7,24 +7,27 @@
 
 
 
+function displayTournmentsFunc(){
 
+  let queryURL = "https://api.pandascore.co/tournaments/upcoming?token=8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I";
 
-fetch("https://api.pandascore.co/tournaments/upcoming.json", {
-	"method": "GET",
-	"headers": {
-		"panadascore-host": "api.pandascore.co",
-		"pandascore-key": "8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-  console.log(err);
-  
-  response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
-});
+  $.ajax({
+    url: 'https://api.pandascore.co/tournaments/upcoming?token=8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I',
+    method: "GET",    
+    dataType: 'JSONP',
+    cors: true,
+    contentType:'application/json',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    success: function() { alert("Success"); },
+    error: function(error) { console.log(error); },
+  }).then(function(response){
+    console.log(response)
+  });
+}
 
+displayTournmentsFunc();
 
 
 
