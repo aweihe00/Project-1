@@ -1,20 +1,14 @@
-//var esportsLoader = document.getElementById("box");
-//var upcomingTournament = new pandaScore();
-
-//$.getJSON("https://api.pandascore.co/tournaments/upcoming/application.json", function(data){
-  //console.log(data);
-//});
-
-
+var Upcoming = document.getElementById("box");
+var tournamentsLoader = document.getElementById("tournaments");
 
 function displayTournmentsFunc(){
 
   let queryURL = "https://api.pandascore.co/tournaments/upcoming?token=8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I";
 
   $.ajax({
-    url: 'https://api.pandascore.co/tournaments/upcoming?token=8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I',
+    url: queryURL,
     method: "GET",    
-    dataType: 'JSONP',
+    dataType: 'JSON',
     cors: true,
     contentType:'application/json',
     headers: {
@@ -25,64 +19,61 @@ function displayTournmentsFunc(){
   }).then(function(response){
     console.log(response)
   });
-}
-
-displayTournmentsFunc();
+};
 
 
+  // displayUpcomingTournaments function re-renders the HTML to display the appropriate content
+  function displayUpcomingTournaments() {
 
+    var upcomingTournamentInfo = $(this).attr("box");
+   //var queryURL = "https://api.pandascore.co/tournaments/upcoming" + upcoming + "?token=8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I";
 
-//request.open('GET', 'https://api.pandascore.co.?
-//platform=3&personaId = 8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I&game=tunguska');
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
 
-//request.setRequestHeader('Api-Key', '8Y7glW4QDl2u44nl-g_P1jfr3pCWp0tT42GIEC0RmPdtl4-Kr_I');
+      // Creating a div to hold the upcoming tournaments information
+      var upcomingTournaments = $("<div class='tournaments'>");
 
-//request.eSportsInfo = function () {
+      // Storing the rating data
+      var beginning = response.beginning_at;
 
-//if (this.readyState === 4) {
+      // Creating an element to have the Beginning date/time displayed
+      var paraOne = $("<p>").text("Beginning: " + beginning);
 
-  //console.log('Status:', this.status);
+      // Displaying the date/time
+      upcomingTournaments.append(pOne);
 
-  //console.log('Headers:', this.getAllResponseHeaders());
+      // Storing the game league
+      var league = response.league;
 
-//console.log('Body:', this.responseText);
+      // Creating an element to hold the league
+      var paraTwo = $("<p>").text("League: " + league);
 
-//}
-//};
+      // Displaying the league
+      upcomingTournaments.append(paraTwo);
 
-//request.send();
+      // Storing the team name initials
+      var name = response.name;
 
-//$().append(content,function(box))
+      // Creating an element to hold the name
+      var paraThree = $("<p>").text("Name: " + name);
 
-//--------------------------------------------------------------------
-//WORKING ON TOP AREA FIRST THEN COMING DOWN TO CLEAN THIS UP
-//GAME SEARCH WILL HAVE ITS OWN LINK 
-//axios({
+      // Appending the team name intials
+      upcomingTournaments.append(paraThree);
 
-  //url: "https://api-v3.igdb.com/covers",
+      // Retrieving the URL for the image
+      var imgURL = response.image_url;
 
- // method: 'POST',
+      // Creating an element to hold the image
+      var image = $("<img>").attr("src", imgURL);
 
-  //headers: {
+      // Appending the image
+      upcomingTournaments.append(image);
 
-    //  'Accept': 'application/json',
-
-      //'user-key': a358c3c44c00442aa1c0af06e21d76ae,
-
-  //},
-
-//  data: "fields age_ratings,aggregated_rating,aggregated_rating_count,alternative_names,artworks,bundles,category,collection,cover,created_at,dlcs,expansions,external_games,first_release_date,follows,franchise,franchises,game_engines,game_modes,genres,hypes,involved_companies,keywords,multiplayer_modes,name,parent_game,platforms,player_perspectives,popularity,pulse_count,rating,rating_count,release_dates,screenshots,similar_games,slug,standalone_expansions,status,storyline,summary,tags,themes,time_to_beat,total_rating,total_rating_count,updated_at,url,version_parent,version_title,videos,websites;"
-
-//})
-
-//.then(response => {
-
-  //console.log(response.data);
-
-//})
-
-//.catch(err => {
-
-  //console.error(err);
-
-//});
+    
+      $("#upcomingTournamentsDisplay").prepend(tournamentsLoader);
+    });
+  };
